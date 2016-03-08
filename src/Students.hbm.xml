@@ -14,11 +14,16 @@
         <property name="gender" type="java.lang.String">
             <column name="GENDER" />
         </property>
-        <property name="birthday" type="java.util.Date">
+        <property name="birthday" type="date">
             <column name="BIRTHDAY" />
         </property>
-        <property name="address" type="java.lang.String">
+        <!--  <property name="address" type="java.lang.String">
             <column name="ADDRESS" />
-        </property>
+        </property>-->
+        <component name="address" class="Address">
+        	<property name="code" column="CODE"/>
+           	<property name="phone" column="PHONE"/>
+            <property name="address" column="ADDRESS"/>
+        </component>
     </class>
 </hibernate-mapping>

@@ -55,14 +55,14 @@ public class SessionTest {
 		// 获得session对象
 		Session session1 = sessionFactory.getCurrentSession();
 		Transaction transaction = session1.beginTransaction();
-		Students s = new Students(1, "张三", "男", new Date(), "北京");
+		Students s = new Students(1, "张三", "男", new Date());
 		session1.save(s);
 		// session1.close();
 		transaction.commit();// 提交事务
 
 		Session session2 = sessionFactory.openSession();
 		transaction = session2.beginTransaction();
-		Students s1 = new Students(2, "李四", "男", new Date(), "上海");
+		Students s1 = new Students(2, "李四", "男", new Date());
 		session2.save(s1);
 		transaction.commit();// 提交事务
 		// session2.close();

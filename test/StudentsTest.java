@@ -43,7 +43,34 @@ public class StudentsTest {
 	@Test
 	public void testSaveStudent() {
 		// 生成学生对象
-		Students s = new Students(1, "张三丰", "女", new Date(), "武当山");
+		Students s = new Students(1, "张三丰", "女", new Date());
+		Address address = new Address("200237", "64251041", "上海");
+		s.setAddress(address);
 		session.save(s);// 保存对象进入数据库
+	}
+
+	@Test
+	public void testGetStudent() {
+		Students students = (Students) session.get(Students.class, 1);
+		System.out.println(students);
+	}
+
+	@Test
+	public void testLoadStudent() {
+		Students students = (Students) session.load(Students.class, 1);
+		System.out.println(students);
+	}
+
+	@Test
+	public void testUpdateStudent() {
+		Students students = (Students) session.get(Students.class, 1);
+		students.setGender("男");
+		session.update(students);
+	}
+
+	@Test
+	public void testDeleteStudent() {
+		Students students = (Students) session.get(Students.class, 1);
+		session.delete(students);
 	}
 }

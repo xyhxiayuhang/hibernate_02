@@ -13,19 +13,19 @@ public class Students {
 	private String sname;// 姓名
 	private String gender;// 性别
 	private Date birthday;// 出生日期
-	private String address;// 地址
+	// private String address;// 地址
+	private Address address;
 
 	public Students() {
 
 	}
 
-	public Students(int sid, String sname, String gender, Date birthday, String address) {
+	public Students(int sid, String sname, String gender, Date birthday) {
 		// super();
 		this.sid = sid;
 		this.sname = sname;
 		this.gender = gender;
 		this.birthday = birthday;
-		this.address = address;
 	}
 
 	public int getSid() {
@@ -60,18 +60,24 @@ public class Students {
 		this.birthday = birthday;
 	}
 
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
+	/*
+	 * public String getAddress() { return address; }
+	 * 
+	 * public void setAddress(String address) { this.address = address; }
+	 */
 
 	@Override
 	public String toString() {
 		return "Students [sid=" + sid + ", sname=" + sname + ", gender=" + gender + ", birthday=" + birthday
 				+ ", address=" + address + "]";
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
 }
